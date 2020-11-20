@@ -8,18 +8,32 @@
 
     .image {
         width: 100%;
-        height: 95%;
+        height: 90%;
         background-size: cover;
         background-position: center;
         margin-bottom: 5px;
     }
 
-    .custom-button {
-        width: 80%;
-        opacity: 0.7;
+    .add-buttons {
         position: absolute;
         top: 240px;
         display: none;
+        width: 90%;
+
+        .custom-button {
+            min-width: unset;
+            width: 120px;
+            align-items: center;
+            line-height: 20px;
+            font-size: 15px;
+            opacity: 0.7;
+
+            @media screen and (max-width: 800px) {
+                opacity: 0.9;
+                min-width: unset;
+                padding: 0 10px;
+            }
+        }
     }
 
     &:hover {
@@ -27,26 +41,53 @@
             opacity: 0.78;
         }
 
-        .custom-button {
-            opacity: 0.87;
+        .add-buttons {
             display: flex;
+            justify-content: space-between;
+
+            .custom-button {
+                opacity: 0.87;
+            }
+        }
+
+
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 40vw;
+
+        &:hover {
+            .image {
+                opacity: unset;
+            }
+
+            .custom-button {
+                opacity: unset;
+            }
         }
     }
 
     .collection-footer {
         width: 100%;
-        height: 5%;
+        height: 10%;
         display: flex;
         justify-content: space-between;
         font-size: 18px;
 
         .name {
-            width: 90%;
+            width: 60%;
             margin-bottom: 15px;
         }
 
-        .price {
-            width: 10%;
+        .prices {
+            display: flex;
+            justify-content: flex-end;
+            width: 40%;
+
+            .price2 {
+                padding-left: 20px;
+            }
+
         }
     }
 }
